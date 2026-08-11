@@ -20,7 +20,10 @@ const app: Application = express();
 
 app.use(
   cors({
-    origin: config.frontend_url,
+    origin: [
+      "http://localhost:3000",
+      "https://doctor-tracker-gamma.vercel.app",
+    ],
     credentials: true,
   }),
 );
