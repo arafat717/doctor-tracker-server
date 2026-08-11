@@ -1,0 +1,22 @@
+model Patient {
+  id        String   @id @default(uuid())
+  name      String
+  age       Int?
+  gender    Gender?
+  condition String?
+  phone     String?
+  address   String?
+
+  doctorId  String
+  doctor    Doctor   @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([doctorId])
+  @@index([condition])
+  @@index([createdAt])
+  @@index([name])
+  @@index([doctorId, condition])
+  @@map("patients")
+}
