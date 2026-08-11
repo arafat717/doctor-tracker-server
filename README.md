@@ -30,23 +30,17 @@ cp .env.example .env
 - Run migrations and generate the Prisma client:
 
 ```bash
-npm run prisma:migrate
-npm run prisma:generate
+npx prisma migrate dev
+npx prisma generate
 ```
 
-4. Seed the database (optional)
-
-```bash
-npm run seed
-```
-
-5. Start the server
+4. Start the server
 
 ```bash
 npm run dev
 ```
 
-6. API docs
+5. API docs
 
 The API routes are defined under `src/app/module/*/*.route.ts`. Use Postman or similar to explore endpoints or add OpenAPI documentation as needed.
 
